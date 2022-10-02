@@ -1,7 +1,8 @@
 import React from 'react';
+import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
-import ThoughtForm from '../components/ThoughtForm';
+
 
 import Auth from '../utils/auth';
 

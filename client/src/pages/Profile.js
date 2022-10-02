@@ -11,10 +11,12 @@ import { useQuery, useMutation  } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { ADD_FRIEND } from '../utils/mutations';
 
+
 const Profile = (props) => {
   const { username: userParam } = useParams();
 
   const [addFriend] = useMutation(ADD_FRIEND);
+
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -38,7 +40,8 @@ const Profile = (props) => {
       </h4>
     );
   }
-
+    
+  // callback function
   const handleClick = async () => {
     try {
       await addFriend({
