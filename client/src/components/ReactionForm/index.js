@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_REACTION } from '../../utils/mutations';
 
+
+
+// functional component
+  // add variable 
 const ReactionForm = ({ thoughtId }) => {
   const [reactionBody, setBody] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -21,6 +25,7 @@ const ReactionForm = ({ thoughtId }) => {
     event.preventDefault();
 
     try {
+      // add reaction call
       await addReaction({
         variables: { reactionBody, thoughtId },
       });

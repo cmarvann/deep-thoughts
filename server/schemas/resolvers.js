@@ -17,6 +17,7 @@ const resolvers = {
   
         throw new AuthenticationError('Not logged in');
       },
+
       // get all users
       users: async () => {
         return User.find()
@@ -24,6 +25,7 @@ const resolvers = {
           .populate('thoughts')
           .populate('friends');
       },
+      
       // get a user by username
       user: async (parent, { username }) => {
         return User.findOne({ username })
